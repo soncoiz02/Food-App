@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Sfood</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header active">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="./img/logo.png" alt="">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="#">Order Online</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="#" class="btn-cart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="btn-login">Login <i class="fas fa-sign-in-alt"></i></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="banner">
+        </section>
+        <section class="product">
+            <div class="container">
+                <div class="product-filter">
+                    <div class="menu">
+                        <h3>Menu</h3>
+                        <ul class="list-menu">
+                            <li data-filter="burgers"><a href="#"><img src="./img/icon/burger.svg" alt=""> Burger</a></li>
+                            <li data-filter="sandwiches"><a href="#"><img src="./img/icon/sandwich.svg" alt=""> Sandwich</a></li>
+                            <li data-filter="steaks"><a href="#"><img src="./img/icon/steak.svg" alt=""> Steak</a></li>
+                            <li data-filter="sausages"><a href="#"><img src="./img/icon/sausages.svg" alt=""> Sausage</a></li>
+                            <li data-filter="izzas"><a href="#"><img src="./img/icon/pizza-slice.svg" alt=""> Pizza</a></li>
+                            <li data-filter="fried-chicken"><a href="#"><img src="./img/icon/chicken-leg.svg" alt=""> Chicken</a></li>
+                            <li data-filter="breads"><a href="#"><img src="./img/icon/bread.svg" alt=""> Breads</a></li>
+                        </ul>
+                        <span class="btn-see">See more</span>
+                    </div>
+                    <!-- <div class="price">
+                        <h3>Price</h3>
+                        <div class="range">
+                            <div class="field">
+                                <div class="value left">
+                                    50
+                                </div>
+                                <input type="range" min="50" max="200" value="50" steps="1" class="range-input">
+                                <div class="value right">
+                                    200
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-filter">Filter</button> -->
+                </div>
+                <div class="product-side">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="list-products">
+                    </div>
+                    <div class="pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col">
+                    <img src="./img/logo.png" alt="">
+                    <a href="#"><i class="fas fa-envelope"></i>info-sfood@gmail.com</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> 28 Trung Vuong Street, Uong Bi City.</a>
+                    <p><i class="far fa-clock"></i>Open from Monday to Sunday every Week</p>
+                </div>
+                <div class="col-1">
+                    <h5>About</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Why Chooes Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <h5>Terms</h5>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Copyright Policy</a></li>
+                        <li><a href="#">Fees and Charge</a></li>
+                    </ul>
+                </div>
+                <div class="col-3">
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                ©Copyright by SonTran 2021, All Right Reserved
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/product.js"></script>
+</body>
+
+</html>

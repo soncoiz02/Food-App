@@ -1,0 +1,77 @@
+.menu{
+    position: relative;
+    width: 100%;
+    .container{
+        padding: 100px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h2{
+            width: 200px;
+            position: relative;
+            text-align: center;
+            margin-bottom: 60px;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 4px;
+                background: coral;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 50px;
+            }
+        }
+        .swiper{
+            width: 100%;
+            .swiper-wrapper{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .swiper-slide{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 170px !important;
+                    height: 200px;
+                    cursor: pointer;
+                    background: #E5E5E5;
+                    border-radius: 10px;
+                    transition: 0.5s;
+                    &:hover{
+                        background: rgba(110, 224, 155, 0.29);
+                    }
+                    .img{
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50px;
+                        background: $primary-color;
+                        margin-bottom: 20px;
+                        overflow: hidden;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    a{
+                        color: $title-color;
+                        font: {
+                            size: 18px;
+                            weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        .line{
+            width: 50%;
+            height: 3px;
+            background: coral;
+            margin-top: 30px;
+        }
+    }
+}

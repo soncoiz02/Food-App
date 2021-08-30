@@ -1,0 +1,59 @@
+@import './scss/var';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+main{
+    position: relative;
+    width: 100%;
+}
+.container{
+    position: relative;
+    max-width: 1200px;
+    padding: 0 30px;
+    margin: 0 auto;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: $text-color;
+    font: {
+        size: 18px;
+    }
+}
+h2{
+    color: $title-color;
+    font: {
+        size: 36px;
+        family: $title-font;
+    }
+}
+input{
+    outline: none;
+}
+
+@import './scss/header';
+@import './scss/hero';
+@import './scss/icon';
+@import './scss/menu';
+@import './scss/about';
+@import './scss/hotest';
+@import './scss/why';
+@import './scss/customers';
+@import './scss/footer';
+@import './scss/banner';
+@import './scss/product';
