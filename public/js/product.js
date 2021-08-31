@@ -40,7 +40,7 @@ const handleData = (data) => {
                             <div class="price">${Math.round(item.price)}$</div>
                         </div>
                         
-                        <a href="#" class="btn-order">
+                        <a href="detail.html?id=${item.id}" class="btn-order">
                             Order Now
                         </a>
                     </div>
@@ -174,3 +174,19 @@ const search = () => {
     }
 }
 search()
+fetch('http://localhost:3000/api/cart-data')
+        .then(respons => respons.json())
+        .then(data => handleCart(data))
+const handleCart = (data) =>{
+    showCartNumberItem(data)
+}
+const showCartNumberItem = (cartData) =>{
+    const cartNumberItem = document.querySelector('.number-item') 
+    if(cartData.length > 0){
+        cartNumberItem.classList.add('active')
+        cartNumberItem.innerHTML = cartData.length
+    }
+    else{
+        cartNumberItem.classList.remove('active')
+    }
+}

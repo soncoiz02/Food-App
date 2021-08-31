@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,10 +29,7 @@
                 </ul>
             </nav>
             <div class="header-right">
-                    <a href="cart.html" class="btn-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <div class="number-item"></div>
-                    </a>
+                <a href="#" class="btn-cart"><i class="fas fa-shopping-cart"></i></a>
                 <a href="#" class="btn-login">Login <i class="fas fa-sign-in-alt"></i></a>
             </div>
         </div>
@@ -41,37 +37,36 @@
     <main>
         <section class="banner">
         </section>
-        <section class="product-detail">
-        </section>
-        <section class="comment">
+        <section class="cart">
             <div class="container">
-                <h2>Our Customers Reviews</h2>
-                <div class="comment-area">
-                    <div class="comment-list">
+                <h2>Your Cart</h2>
+                <div class="cart-list">
+                </div>
+                <div class="cart-total">
+                    <div class="top">
+                        <div class="voucher">
+                            <i class="fas fa-ticket-alt"></i>
+                            No voucher used
+                        </div>
+                        <div class="shipping">
+                            <i class="fas fa-truck"></i>
+                            Freeship
+                        </div>
+                        <div class="btn-active"></div>
                     </div>
-                    <div class="comment-form">
-                        <div class="avt">
-                            S
+                    <div class="bottom">
+                        <div class="sum-total">
+                            Total: <p class="total-product">0</p>
                         </div>
-                        <div class="form">
-                            <textarea id="comment" placeholder="Your comment"></textarea>
-                            <input type="submit" value="Comment" id="btn-comment">
-                        </div>
+                        <a href="#" class="btn-order">Order</a>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="rate-product">
+        <section class="cart-empty active">
             <div class="container">
-                <h2>Rated Foods</h2>
-                <div class="list-product">
-                </div>
-            </div>
-        </section>
-        <section class="alert">
-            <div class="box">
-                <i class="fas fa-check-circle"></i>
-                <p>The product has been added to cart</p>
+                <h2>Your Cart is Empty</h2>
+                    <img src="./img/11104.jpg" alt="">
             </div>
         </section>
     </main>
@@ -115,6 +110,6 @@
             </div>
         </div>
     </footer>
-    <script src="./js/detail.js"></script>
+    <script src="./js/cart.js"></script>
 </body>
 </html>

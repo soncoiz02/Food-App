@@ -52,8 +52,8 @@ const handleData = (data) => {
                             <label for="size-m">
                                 M-Medium
                             </label>
-                            <input type="radio" id="size-;" name="size" value="L">
-                            <label for="size-;">
+                            <input type="radio" id="size-l" name="size" value="L">
+                            <label for="size-l">
                                 L-Large
                             </label>
                         </div>
@@ -68,7 +68,7 @@ const handleData = (data) => {
                         <p><i class="far fa-check-circle"></i>Foods are delivered in about 30 minutes to 1 hour</p>
                     </div>
                     <div class="btn-add">
-                        <input type="submit" value="Order Now" id="btn-add">
+                        <input type="submit" value="Order" id="btn-add">
                     </div>
                 </div>
             </div>
@@ -83,7 +83,6 @@ const handleData = (data) => {
         const btnPlus = document.querySelector('.btn-plus')
         const btnMinus = document.querySelector('.btn-minus')
         let quantityValue = document.querySelector('#quantity')
-        console.log(quantityValue)
         btnPlus.onclick = () =>{
             quantityValue.value = Number(quantityValue.value) + 1
         }
@@ -97,6 +96,9 @@ const handleData = (data) => {
         }
     }
     updateValue()
+    data.forEach(e => {
+        addCartData(e.id, e.name, e.price, e.img)
+    })
 }
 
 const render = (data) => {
@@ -137,9 +139,82 @@ const render = (data) => {
 }
 
 
+
+///////////////////////////////////////////////////////////////////////
+
+
+const cartApi = 'http://localhost:3000/api/cart-data'
+fetch(cartApi)
+        .then(respons => respons.json())
+        .then(data => handleCart(data))
+const handleCart = (data) =>{
+    showCartNumberItem(data)
+}
+const showCartNumberItem = (cartData) =>{
+    const cartNumberItem = document.querySelector('.number-item') 
+    if(cartData.length > 0){
+        cartNumberItem.classList.add('active')
+        cartNumberItem.innerHTML = cartData.length
+    }
+    else{
+        cartNumberItem.classList.remove('active')
+    }
+}
+const addCartData = (idProduct, nameProduct, priceProduct, imgProduct) => {
+    const showAlert = () =>{
+        const alertBox = document.querySelector('.alert')
+        alertBox.classList.add('active')
+        setTimeout(()=>{
+            alertBox.classList.remove('active')
+        }, 1500)
+    }
+    const btnAdd = document.querySelector('.btn-add')
+    let i = 0
+    btnAdd.onclick = () => {
+        let quantityValue = Number(document.querySelector('#quantity').value)
+        let allSize = document.querySelectorAll('input[type="radio"]')
+        let sizeValue
+        allSize.forEach(e => {
+            if(e.checked == true){
+                sizeValue = e.value
+            }
+        })
+        i++
+        let data = {
+            id: idProduct,
+            name: nameProduct,
+            img: imgProduct,
+            price: priceProduct,
+            quantity: quantityValue,
+            size: sizeValue
+        }
+        showAlert()
+        pushCartData(data)
+    }
+}
+
+const pushCartData = (cartData) => {
+    fetch(cartApi, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(cartData)
+    })
+    fetch(cartApi)
+        .then(respons => respons.json())
+        .then(data => handleCart(data))
+}
+
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+
 fetch('http://localhost:3000/api/comment')
     .then(respons => respons.json())
     .then(data => renderComment(data))
+
 
 const renderComment = (data) => {
     let item = data.map(item => {
@@ -179,10 +254,10 @@ const pushComment = () => {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(commentData)
         })
+        fetch(commentApi)
         .then(respons => respons.json())
         .then(data => renderComment(data))
     }

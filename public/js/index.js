@@ -50,7 +50,7 @@ const showDish = (data) => {
                 <div class="price">${Math.round(item.price)}$</div>
             </div>
         </div>
-        <a href="#" class="btn-order">Order Now</a>
+        <a href="detail.html?id=${item.id}" class="btn-order">Order Now</a>
     </div>
     `
   )
@@ -66,7 +66,22 @@ window.onscroll = () =>{
 }
 const element = document.querySelectorAll('section')
 console.log(element)
-
+fetch('http://localhost:3000/api/cart-data')
+        .then(respons => respons.json())
+        .then(data => handleCart(data))
+const handleCart = (data) =>{
+    showCartNumberItem(data)
+}
+const showCartNumberItem = (cartData) =>{
+    const cartNumberItem = document.querySelector('.number-item') 
+    if(cartData.length > 0){
+        cartNumberItem.classList.add('active')
+        cartNumberItem.innerHTML = cartData.length
+    }
+    else{
+        cartNumberItem.classList.remove('active')
+    }
+}
 const sr = ScrollReveal({
   origin: 'top',
   distance: '40px',

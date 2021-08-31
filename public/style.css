@@ -140,8 +140,50 @@ input {
 }
 
 .header-right .btn-cart {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-right .btn-cart i {
   color: #44BC74;
   font-size: 24px;
+}
+
+.header-right .btn-cart .number-item {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  background: red;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  display: none;
+}
+
+.header-right .btn-cart .number-item.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .header-right .btn-login {
@@ -2628,5 +2670,465 @@ input {
 .rate-product .container .list-product .item .btn-order:hover {
   background: coral;
   color: white;
+}
+
+.cart {
+  position: relative;
+  width: 100%;
+  background: whitesmoke;
+  display: none;
+}
+
+.cart.active {
+  display: block;
+}
+
+.cart .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  padding: 50px 0;
+}
+
+.cart .container h2 {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.cart .container h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  border-radius: 50px;
+  background: coral;
+  bottom: -5px;
+  left: 0;
+}
+
+.cart-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 20px 0;
+}
+
+.cart-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: white;
+  -webkit-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.cart-item .detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 10px;
+  width: 230px;
+}
+
+.cart-item .detail .img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.cart-item .detail .img img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.cart-item .detail .name {
+  color: #202243;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.cart-item .size {
+  color: #202243;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.cart-item .size p {
+  margin-top: 20px;
+  color: coral;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cart-item .price {
+  color: #202243;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.cart-item .price p {
+  margin-top: 20px;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.cart-item .quantity {
+  color: #202243;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.cart-item .quantity .quantity-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.cart-item .quantity .quantity-form button {
+  width: 25px;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  background: coral;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-item .quantity .quantity-form input {
+  width: 80px;
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid coral;
+  background: white;
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+}
+
+.cart-item .quantity .quantity-form input::-webkit-inner-spin-button, .cart-item .quantity .quantity-form input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-item .total {
+  color: #202243;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.cart-item .total p {
+  margin-top: 20px;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.cart-item .delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #202243;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+.cart-item .delete a {
+  margin-top: 20px;
+  color: coral;
+  font-size: 25px;
+  text-align: center;
+}
+
+.cart-total {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 30px;
+  border-radius: 5px;
+  background: white;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20px;
+  -webkit-box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cart-total .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px 0;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
+  position: relative;
+  padding: 10px 0;
+  height: 50px;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.cart-total .top.active {
+  height: 90px;
+}
+
+.cart-total .top .voucher, .cart-total .top .shipping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  color: gray;
+  pointer-events: none;
+}
+
+.cart-total .top .voucher i, .cart-total .top .shipping i {
+  color: coral;
+  margin-right: 10px;
+}
+
+.cart-total .top .btn-active {
+  width: 100px;
+  height: 5px;
+  cursor: pointer;
+  border-radius: 50px;
+  background: #c2c2c2;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.cart-total .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.cart-total .bottom .sum-total {
+  color: #202243;
+  font-size: 25px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.cart-total .bottom .sum-total p {
+  color: red;
+  font-family: sans-serif;
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+.cart-total .bottom .btn-order {
+  width: 250px;
+  height: 50px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-size: 18px;
+  background: coral;
+}
+
+.cart-empty {
+  width: 100%;
+  position: relative;
+  display: none;
+}
+
+.cart-empty.active {
+  display: block;
+}
+
+.cart-empty .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px 0;
+}
+
+.cart-empty h2 {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.cart-empty h2::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  border-radius: 50px;
+  background: coral;
+  bottom: -5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.cart-empty img {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.alert {
+  position: fixed;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+.alert.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.alert .box {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 200px;
+  padding: 30px 50px;
+  gap: 20px 0;
+}
+
+.alert .box i {
+  font-size: 60px;
+  color: #44BC74;
+  background: white;
+  border-radius: 50%;
+}
+
+.alert .box p {
+  color: white;
+  font-size: 20px;
 }
 /*# sourceMappingURL=style.css.map */

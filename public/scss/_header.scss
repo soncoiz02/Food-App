@@ -56,8 +56,33 @@
       justify-content: flex-end;
       align-items: center;
       .btn-cart{
-          color: $primary-color;
-          font-size: 24px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          i{
+            color: $primary-color;
+            font-size: 24px;
+          }
+          .number-item{
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            background: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            display: none;
+            &.active{
+              display: flex;
+            }
+          }
       }
       .btn-login{
           width: 150px;
