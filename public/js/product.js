@@ -29,7 +29,8 @@ const handleData = (data) => {
                             <img src="${item.img}" alt="">
                             <div class="rating">${rate(item.rate)}</div>
                         </div>
-                        <a href="#" class="name">${item.name}</a>
+                        <div class="hot">Hot</div>
+                        <a href="detail.html?id=${item.id}" class="name">${item.name}</a>
                         <p class="dsc">${item.dsc}</p>
                         <div class="detail">
                             <div class="country">
@@ -53,11 +54,21 @@ const handleData = (data) => {
     const renderBtnNum = (pageNum) => {
         const pagination = document.querySelector('.pagination')
         pagination.innerHTML = ''
-        for (let i = 0; i < pageNum; i++) {
-            let html = `
-                <button data-num="${i + 1}" class="btn-number">${i + 1}</button>
-            `
-            pagination.insertAdjacentHTML('beforeend', html)
+        if(pageNum > 5){
+            for (let i = 0; i < 6; i++) {
+                let html = `
+                    <button data-num="${i + 1}" class="btn-number">${i + 1}</button>
+                `
+                pagination.insertAdjacentHTML('beforeend', html)
+            }
+        }
+        else{
+            for (let i = 0; i < pageNum; i++) {
+                let html = `
+                    <button data-num="${i + 1}" class="btn-number">${i + 1}</button>
+                `
+                pagination.insertAdjacentHTML('beforeend', html)
+            }
         }
     }
     const activeBtn = (number) => {
@@ -74,22 +85,59 @@ const handleData = (data) => {
     const paging = () => {
         let dataNum = 0
         const btnNumber = document.querySelectorAll('.btn-number')
-        btnNumber.forEach(e => {
-            e.onclick = () => {
-                dataNum = e.getAttribute('data-num')
-                renderItem(dataNum, dataItem)
-                activeBtn(dataNum)
+        const btnLenght = btnNumber.length
+        const lastBtn = btnNumber[btnLenght - 1]
+        const firstBtn = btnNumber[0]
+            btnNumber.forEach(e => {
+                e.onclick = () => {
+                    dataNum = e.getAttribute('data-num')
+                    renderItem(dataNum, dataItem)
+                    activeBtn(dataNum)
+                    document.body.scrollTop = 300;
+                    document.documentElement.scrollTop = 300;
+                }
+            })
+            lastBtn.onclick = () =>{
+                console.log(firstBtn)
+                for(let i = 0; i < btnLenght; i++){
+                    btnNumber[i].textContent = Number(btnNumber[i].textContent) + 1
+                    btnNumber[i].setAttribute('data-num', Number(btnNumber[i].textContent))
+                }
+                dataNum = lastBtn.getAttribute('data-num')
+                console.log(dataNum - 1)
+                renderItem(dataNum - 1, dataItem)
+                activeBtn(dataNum - 1)
                 document.body.scrollTop = 300;
                 document.documentElement.scrollTop = 300;
             }
-        })
+            firstBtn.onclick = () =>{
+                if(firstBtn.getAttribute('data-num') >= 2){
+                    for(let i = 0; i < btnLenght; i++){
+                        btnNumber[i].textContent = Number(btnNumber[i].textContent) - 1
+                        btnNumber[i].setAttribute('data-num', Number(btnNumber[i].textContent))
+                    }
+                    dataNum = Number(firstBtn.getAttribute('data-num'))
+                    renderItem(dataNum + 1, dataItem)
+                    activeBtn(dataNum + 1)
+                    document.body.scrollTop = 300;
+                    document.documentElement.scrollTop = 300;
+                }
+                else{
+                    dataNum = firstBtn.getAttribute('data-num')
+                    renderItem(dataNum, dataItem)
+                    activeBtn(dataNum)
+                    document.body.scrollTop = 300;
+                    document.documentElement.scrollTop = 300;
+                }
+            }
+        
     }
     renderItem(currentPage, dataItem)
     renderBtnNum(pageNumber)
     activeBtn(currentPage)
     paging()
 }
-getApi('best-foods')
+getApi('our-foods')
 const listMenu = document.querySelector('.list-menu')
 const showMore = () => {
     document.querySelector('.btn-see').onclick = () => {
@@ -115,3 +163,14 @@ const activeMenu = () => {
     }
 }
 activeMenu()
+
+const search = () => {
+    const btnSearch = document.querySelector('.btn-search')
+    btnSearch.onclick = () => {
+        let searchValue = document.querySelector('#search').value
+        fetch('http://localhost:3000/api/our-foods/?name_like=' + searchValue)
+        .then(respons => respons.json())
+        .then(data => handleData(data))
+    }
+}
+search()

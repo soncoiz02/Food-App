@@ -36,8 +36,9 @@
           align-items: center;
           padding: 20px 30px;
           border-radius: 20px;
-          background: rgba(110, 224, 156, 0.3);
+          background: rgba(110, 224, 156, 0.4);
           cursor: pointer;
+          transition: 0.5s;
           .img {
             width: 200px;
             height: 200px;
@@ -60,7 +61,7 @@
           }
           .detail {
             width: 100%;
-            h5 {
+            .name {
               color: $title-color;
               margin-bottom: 10px;
               text-overflow: ellipsis;
@@ -88,6 +89,7 @@
               .country{
                 color: $title-color;
                 font-size: 18px;
+                width: 150px;
                 i{
                   font-size: 20px;
                   color: red;
@@ -127,11 +129,14 @@
             transition: 0.5s;
             transform: translateY(10px);
           }
-          &:hover > .btn-order {
-            transform: translateY(0);
-            background: coral;
-            color: white;
-          }
+          &:hover {
+            background: rgba(110, 224, 156, 0.8);
+            .btn-order {
+              transform: translateY(0);
+              background: coral;
+              color: white;
+            }
+          } 
         }
       }
       .swiper-button-next, .swiper-button-prev{
@@ -150,7 +155,7 @@
       width: 100%;
       display: flex;
       justify-content: flex-end;
-      margin-top: 20px;
+      margin-top: 50px;
       a {
         width: 200px;
         height: 50px;

@@ -43,11 +43,11 @@ const showDish = (data) => {
         ${rate(item.rate)}
         </div>
         <div class="detail">
-            <h5>${item.name}</h5>
+            <a href="detail.html?id=${item.id}" class="name">${item.name}</a>
             <p class="dsc">${item.dsc}</p>
             <div class="sub-detail">
                 <div class="country"><i class="fas fa-map-marker-alt"></i>${item.country}</div>
-                <div class="price">${item.price}$</div>
+                <div class="price">${Math.round(item.price)}$</div>
             </div>
         </div>
         <a href="#" class="btn-order">Order Now</a>

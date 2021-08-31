@@ -1,0 +1,170 @@
+.rate-product{
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+            position: relative;
+            margin-bottom: 60px;
+            &::after{
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 4px;
+                border-radius: 50px;
+                background: coral;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -5px;
+            }
+        }
+        .list-product{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+
+            .item{
+                position: relative;
+                display: flex;
+                width: 250px;
+                flex-direction: column;
+                border-radius: 10px;
+                background: white;
+                box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                margin: 20px 10px;
+                &:hover {
+                  .btn-order{
+                    opacity: 1;
+                    transform: translate(-50%, 50%);
+                  }
+      
+                  .img > .rating{
+                    left: 0;
+                  }
+                } 
+      
+                .img{
+                  position: relative;
+                  width: 250px;
+                  height: 200px;
+                  border-radius: 10px;
+                  overflow: hidden;
+                  margin-bottom: 5px;
+                  img{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    object-fit: cover;
+                  }
+      
+                  .rating{
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.3);
+                    top: 0;
+                    left: -30px;
+                    padding: 20px 5px;
+                    transition: 0.5s;
+                    i{
+                      font-size: 15px;
+                      color: gold;
+                      margin: 5px 0;
+                    }
+                  }
+                }
+                .hot{
+                  position: absolute;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  color: white;
+                  background: coral;
+                  top: -10px;
+                  right: -10px;
+                  border-radius: 50%;
+                  box-shadow: 0 0 10px 1px rgba(0,0,0,0.2);
+                }
+                .name{
+                  color: $title-color;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  font: {
+                    size: 20px;
+                    family: $title-font;
+                    weight: 600;
+                  }
+                  margin: 0 10px 5px 10px;
+                }
+                .dsc{
+                  font-size: 15px;
+                  color: black;
+                  width: 200px;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  margin: 0 10px;
+                }
+      
+                .detail{
+                  display: flex;
+                  justify-content: space-between;
+                  margin: 5px 10px 20px 10px;
+                  .country{
+                    width: 150px;
+                    font-size: 14px;
+                    color: $title-color;
+                    i{
+                      font-size: 20px;
+                      color: red;
+                      margin-right: 3px;
+                    }
+                  }
+                  .price{
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    background: coral;
+                    border-radius: 50%;
+                  }
+                }
+                .btn-order{
+                  width: 150px;
+                  height: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  color: black;
+                  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1);
+                  border-radius: 5px;
+                  font-size: 16px;
+                  background: whitesmoke;
+                  transition: 0.3s;
+                  transform: translate(-50%, 100%);
+                  position: absolute;
+                  bottom: 0;
+                  left: 50%;
+                  opacity: 0;
+                  &:hover{
+                    background: coral;
+                    color: white;
+                  }
+                }
+              }
+        }
+    }
+}

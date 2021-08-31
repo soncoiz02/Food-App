@@ -1,7 +1,7 @@
 .footer{
     position: relative;
     width: 100%;
-    background: rgba(110, 224, 155, 0.3);
+    background: rgba(110, 224, 155, 0.6);
     .container{
         display: flex;
         flex-direction: column;
@@ -21,7 +21,7 @@
                 color: grey;
                 transition: 0.3s;
                 &:hover{
-                    color: rgba(255, 127, 80, 0.596);
+                    color: whitesmoke;
                 }
             }
         }
@@ -45,7 +45,7 @@
                 color: grey;
                 transition: 0.3s;
                 &:hover{
-                    color: rgba(255, 127, 80, 0.596);
+                    color: whitesmoke;
                 }
                 i{
                     margin-right: 10px;
