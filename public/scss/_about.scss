@@ -10,6 +10,7 @@
     &-content{
         display: flex;
         flex-direction: column;
+        width: 50%;
         h2{
             width: 250px;
             position: relative;
@@ -70,7 +71,7 @@
 
     &-img{
         position: relative;
-        width: 500px;
+        width: 50%;
         height: 600px;
         border-radius: 10px;
         overflow: hidden;
