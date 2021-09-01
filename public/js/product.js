@@ -98,17 +98,25 @@ const handleData = (data) => {
                 }
             })
             lastBtn.onclick = () =>{
-                console.log(firstBtn)
-                for(let i = 0; i < btnLenght; i++){
-                    btnNumber[i].textContent = Number(btnNumber[i].textContent) + 1
-                    btnNumber[i].setAttribute('data-num', Number(btnNumber[i].textContent))
+                if(lastBtn.getAttribute('data-num') >= 6){
+                    for(let i = 0; i < btnLenght; i++){
+                        btnNumber[i].textContent = Number(btnNumber[i].textContent) + 1
+                        btnNumber[i].setAttribute('data-num', Number(btnNumber[i].textContent))
+                    }
+                    dataNum = lastBtn.getAttribute('data-num')
+                    console.log(dataNum - 1)
+                    renderItem(dataNum - 1, dataItem)
+                    activeBtn(dataNum - 1)
+                    document.body.scrollTop = 300;
+                    document.documentElement.scrollTop = 300;
                 }
-                dataNum = lastBtn.getAttribute('data-num')
-                console.log(dataNum - 1)
-                renderItem(dataNum - 1, dataItem)
-                activeBtn(dataNum - 1)
-                document.body.scrollTop = 300;
-                document.documentElement.scrollTop = 300;
+                else{
+                    dataNum = lastBtn.getAttribute('data-num')
+                    renderItem(dataNum, dataItem)
+                    activeBtn(dataNum)
+                    document.body.scrollTop = 300;
+                    document.documentElement.scrollTop = 300;
+                }
             }
             firstBtn.onclick = () =>{
                 if(firstBtn.getAttribute('data-num') >= 2){
