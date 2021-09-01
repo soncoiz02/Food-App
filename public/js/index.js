@@ -1,4 +1,4 @@
-const urlApi = 'https://ig-food-menus.herokuapp.com/burgers'
+const urlApi = 'https://son-food-app.herokuapp.com/api/burgers'
 
 fetch(urlApi)
   .then((response) => response.json())
@@ -46,7 +46,7 @@ window.onscroll = () => {
 }
 const element = document.querySelectorAll('section')
 console.log(element)
-fetch('http://localhost:3000/api/cart-data')
+fetch('https://son-food-app.herokuapp.com/api/cart-data')
   .then(respons => respons.json())
   .then(data => handleCart(data))
 const handleCart = (data) => {

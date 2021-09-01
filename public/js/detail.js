@@ -1,5 +1,5 @@
 const currentUrl = window.location.search
-const apiUrl = 'http://localhost:3000/api/our-foods'
+const apiUrl = 'https://son-food-app.herokuapp.com/api/our-foods'
 fetch(apiUrl + currentUrl)
     .then(respons => respons.json())
     .then(data => handleData(data))
@@ -143,7 +143,7 @@ const render = (data) => {
 ///////////////////////////////////////////////////////////////////////
 
 
-const cartApi = 'http://localhost:3000/api/cart-data'
+const cartApi = 'https://son-food-app.herokuapp.com/api/cart-data'
 fetch(cartApi)
         .then(respons => respons.json())
         .then(data => handleCart(data))

@@ -1,4 +1,4 @@
-const cartDataApi = 'http://localhost:3000/api/cart-data'
+const cartDataApi = 'https://son-food-app.herokuapp.com/api/cart-data'
 fetch(cartDataApi)
     .then(respons => respons.json())
     .then(data => handleData(data))

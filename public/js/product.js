@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/api/'
+const apiUrl = 'https://son-food-app.herokuapp.com/api/'
 const getApi = (cate) => {
     fetch(apiUrl + cate)
         .then(respons => respons.json())
@@ -168,13 +168,13 @@ const search = () => {
     const btnSearch = document.querySelector('.btn-search')
     btnSearch.onclick = () => {
         let searchValue = document.querySelector('#search').value
-        fetch('http://localhost:3000/api/our-foods/?name_like=' + searchValue)
+        fetch('https://son-food-app.herokuapp.com/api//our-foods/?name_like=' + searchValue)
         .then(respons => respons.json())
         .then(data => handleData(data))
     }
 }
 search()
-fetch('http://localhost:3000/api/cart-data')
+fetch('https://son-food-app.herokuapp.com/api/cart-data')
         .then(respons => respons.json())
         .then(data => handleCart(data))
 const handleCart = (data) =>{
