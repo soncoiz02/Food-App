@@ -89,7 +89,7 @@
         width: 500px;
         height: 500px;
         border-radius: 50%;
-        box-shadow: 0 0 30px 1px #6ee09c91,
+        box-shadow: 0 0 30px 1px rgba(0,0,0,0.1),
                     0 0 10px 1px rgba(0,0,0,0.2) inset;
         overflow: hidden;
         border: 5px solid white;
