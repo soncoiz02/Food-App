@@ -165,12 +165,12 @@
         display: flex;
         flex-direction: column;
         color: $title-color;
-      font: {
+        font: {
         size: 18px;
         family: $title-font;
         weight: 600;
       }
-      a {
+      .btn-delete {
         margin-top: 20px;
         color: coral;
         font-size: 25px;

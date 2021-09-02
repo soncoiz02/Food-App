@@ -49,7 +49,7 @@ const renderData = (cartData) =>{
             </div>
             <div class="delete">
                 Delete
-                <a href="#" class="btn-delete"><i class="fas fa-trash-alt"></i></a>
+                <div class="btn-delete"><i class="fas fa-trash-alt"></i></div>
             </div>
         </div>
         `

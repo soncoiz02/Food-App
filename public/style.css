@@ -2790,7 +2790,7 @@ input {
   font-weight: 600;
 }
 
-.cart-item .delete a {
+.cart-item .delete .btn-delete {
   margin-top: 20px;
   color: coral;
   font-size: 25px;
