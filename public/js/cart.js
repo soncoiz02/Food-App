@@ -126,3 +126,19 @@ const deleteCart = (data) => {
         }
     })
 }
+
+const activeMobile = () =>{
+    const mobileHeader = document.querySelector('.mobile')
+    const btnBar = document.querySelector('.btn-bar')
+    const mobileNav = document.querySelector('.mobile-box')
+    btnBar.onclick = () => {
+      btnBar.classList.toggle('active')
+      mobileHeader.classList.toggle('active')
+    }
+    mobileHeader.onclick = () =>{
+      btnBar.classList.remove('active')
+      mobileHeader.classList.remove('active')
+    }
+  }
+  
+  activeMobile()

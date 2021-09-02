@@ -55,6 +55,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      gap: 0 30px;
       .btn-cart{
           position: relative;
           display: flex;
@@ -84,6 +85,14 @@
             }
           }
       }
+      .btn-bar{
+        i{
+          font-size: 24px;
+          color: $primary-color;
+        }
+        cursor: pointer;
+        display: none;
+      }
       .btn-login{
           width: 150px;
           height: 60px;
@@ -94,7 +103,6 @@
           background: $primary-color;
           font-size: 20px;
           border-radius: 50px;
-          margin-left: 30px;
           i{
             margin-left: 5px;
           }

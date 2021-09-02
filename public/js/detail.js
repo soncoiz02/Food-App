@@ -211,7 +211,7 @@ const pushCartData = (cartData) => {
 //////////////////////////////////////////////////////////////////////////////
 
 
-fetch('http://localhost:3000/api/comment')
+fetch('https://son-food-app.herokuapp.com/api/comment')
     .then(respons => respons.json())
     .then(data => renderComment(data))
 
@@ -241,7 +241,7 @@ const renderComment = (data) => {
 
 const pushComment = () => {
     const btn = document.querySelector('#btn-comment')
-    const commentApi = 'http://localhost:3000/api/comment'
+    const commentApi = 'https://son-food-app.herokuapp.com/api/comment'
     btn.onclick = () =>{
         let commentValue = document.querySelector('#comment').value
         let commentData = {
@@ -263,3 +263,19 @@ const pushComment = () => {
     }
 }
 pushComment()
+
+const activeMobile = () =>{
+    const mobileHeader = document.querySelector('.mobile')
+    const btnBar = document.querySelector('.btn-bar')
+    const mobileNav = document.querySelector('.mobile-box')
+    btnBar.onclick = () => {
+      btnBar.classList.toggle('active')
+      mobileHeader.classList.toggle('active')
+    }
+    mobileHeader.onclick = () =>{
+      btnBar.classList.remove('active')
+      mobileHeader.classList.remove('active')
+    }
+  }
+  
+  activeMobile()

@@ -63,21 +63,50 @@ const showCartNumberItem = (cartData) => {
   }
 }
 
+const activeMobile = () =>{
+  const mobileHeader = document.querySelector('.mobile')
+  const btnBar = document.querySelector('.btn-bar')
+  const mobileNav = document.querySelector('.mobile-box')
+  btnBar.onclick = () => {
+    btnBar.classList.toggle('active')
+    mobileHeader.classList.toggle('active')
+  }
+  mobileHeader.onclick = () =>{
+    btnBar.classList.remove('active')
+    mobileHeader.classList.remove('active')
+  }
+}
+
+activeMobile()
+
 const handleSwiper = () => {
-  let ipadWidth = window.matchMedia("(max-width: 1025px)")
+  let ipadWidth = window.matchMedia("(max-width: 1025px) and (min-width: 769px)")
+  let mobileWidth = window.matchMedia("(max-width: 768px)")
   if (ipadWidth.matches) {
     var swiper = new Swiper(".mySwiper", {
       slidesPerView: 3,
       spaceBetween: 50,
       freeMode: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
     });
     var swipers = new Swiper(".mySwipers", {
       slidesPerView: 2,
       spaceBetween: 30,
+      freeMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+  else if(mobileWidth.matches){
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      freeMode: true,
+    });
+    var swipers = new Swiper(".mySwipers", {
+      slidesPerView: 1,
+      spaceBetween: 20,
       freeMode: true,
       navigation: {
         nextEl: ".swiper-button-next",
@@ -90,10 +119,6 @@ const handleSwiper = () => {
       slidesPerView: 5,
       spaceBetween: 70,
       freeMode: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
     });
     var swipers = new Swiper(".mySwipers", {
       slidesPerView: 3,

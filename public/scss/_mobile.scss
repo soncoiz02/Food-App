@@ -1,0 +1,105 @@
+.mobile{
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 50px;
+    height: 100vh;
+    z-index: 100;
+    background: none;
+    transform: translateX(-10000px);
+    transition: 0.5s;
+    &.active{
+        transform: translateX(0);
+    }
+    &-box{
+        display: flex;
+        width: 60%;
+        flex-direction: column;
+        background: whitesmoke;
+        border-right: 1px solid $primary-color;
+        padding: 50px 30px; 
+        height: 100%;
+        // transform: translateX(-700px);
+        // transition: 0.5s;
+        // &.active{
+        //         transform: translateX(0);
+        // }
+    }
+    &-nav{
+        width: 100%;
+        ul {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 50px 0;
+            li {
+              &.active {
+                a {
+                  color: $primary-color;
+                }
+              }
+              a {
+                color: $title-color;
+                transition: 0.3s;
+                font: {
+                  size: 16px;
+                  weight: 600;
+                }
+                &:hover{
+                    color: $primary-color;
+                }
+              }
+            }
+          }
+    }
+    &-bottom{
+        margin-top: 50px;
+        justify-content: flex-start;
+        width: 100%;
+        display: flex;
+        .btn-cart{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+              color: $primary-color;
+              font-size: 24px;
+            }
+            .number-item{
+              position: absolute;
+              right: -10px;
+              top: -10px;
+              background: red;
+              color: white;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              width: 20px;
+              height: 20px;
+              font-size: 12px;
+              cursor: pointer;
+              display: none;
+              &.active{
+                display: flex;
+              }
+            }
+        }
+        .btn-login{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: $primary-color;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            border-radius: 50px;
+            i{
+              margin-left: 5px;
+            }
+        }
+    }
+}

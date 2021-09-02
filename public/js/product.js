@@ -88,13 +88,16 @@ const handleData = (data) => {
         const btnLenght = btnNumber.length
         const lastBtn = btnNumber[btnLenght - 1]
         const firstBtn = btnNumber[0]
+        const scrollTop = () =>{
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
             btnNumber.forEach(e => {
                 e.onclick = () => {
                     dataNum = e.getAttribute('data-num')
                     renderItem(dataNum, dataItem)
                     activeBtn(dataNum)
-                    document.body.scrollTop = 300;
-                    document.documentElement.scrollTop = 300;
+                    scrollTop()
                 }
             })
             lastBtn.onclick = () =>{
@@ -107,15 +110,13 @@ const handleData = (data) => {
                     console.log(dataNum - 1)
                     renderItem(dataNum - 1, dataItem)
                     activeBtn(dataNum - 1)
-                    document.body.scrollTop = 300;
-                    document.documentElement.scrollTop = 300;
+                    scrollTop()
                 }
                 else{
                     dataNum = lastBtn.getAttribute('data-num')
                     renderItem(dataNum, dataItem)
                     activeBtn(dataNum)
-                    document.body.scrollTop = 300;
-                    document.documentElement.scrollTop = 300;
+                    scrollTop()
                 }
             }
             firstBtn.onclick = () =>{
@@ -127,15 +128,13 @@ const handleData = (data) => {
                     dataNum = Number(firstBtn.getAttribute('data-num'))
                     renderItem(dataNum + 1, dataItem)
                     activeBtn(dataNum + 1)
-                    document.body.scrollTop = 300;
-                    document.documentElement.scrollTop = 300;
+                    scrollTop()
                 }
                 else{
                     dataNum = firstBtn.getAttribute('data-num')
                     renderItem(dataNum, dataItem)
                     activeBtn(dataNum)
-                    document.body.scrollTop = 300;
-                    document.documentElement.scrollTop = 300;
+                    scrollTop()
                 }
             }
         
@@ -165,8 +164,8 @@ const activeMenu = () => {
             listItemMenu[i].classList.add('active')
             dataFilter = listItemMenu[i].getAttribute('data-filter')
             getApi(dataFilter)
-            document.body.scrollTop = 300;
-            document.documentElement.scrollTop = 300;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     }
 }
@@ -198,3 +197,19 @@ const showCartNumberItem = (cartData) =>{
         cartNumberItem.classList.remove('active')
     }
 }
+
+const activeMobile = () =>{
+    const mobileHeader = document.querySelector('.mobile')
+    const btnBar = document.querySelector('.btn-bar')
+    const mobileNav = document.querySelector('.mobile-box')
+    btnBar.onclick = () => {
+      btnBar.classList.toggle('active')
+      mobileHeader.classList.toggle('active')
+    }
+    mobileHeader.onclick = () =>{
+      btnBar.classList.remove('active')
+      mobileHeader.classList.remove('active')
+    }
+  }
+  
+  activeMobile()
