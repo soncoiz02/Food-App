@@ -505,7 +505,8 @@
 
     .icon{
         .container{
-            gap: 0 50px;
+            padding: 50px 30px;
+            justify-content: space-between;
             .card{
                 width: auto;
                 height: auto;
