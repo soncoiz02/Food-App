@@ -3618,7 +3618,10 @@ input {
     font-size: 20px;
   }
   .icon .container {
-    gap: 0 50px;
+    padding: 50px 30px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .icon .container .card {
     width: auto;
