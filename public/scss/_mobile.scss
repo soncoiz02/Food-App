@@ -13,17 +13,13 @@
     }
     &-box{
         display: flex;
-        width: 60%;
+        width: calc(100% / 3px);
         flex-direction: column;
-        background: whitesmoke;
-        border-right: 1px solid $primary-color;
+        background: white;
+        border-right: 1px solid gray;
         padding: 50px 30px; 
         height: 100%;
-        // transform: translateX(-700px);
-        // transition: 0.5s;
-        // &.active{
-        //         transform: translateX(0);
-        // }
+        z-index: 1000;
     }
     &-nav{
         width: 100%;
