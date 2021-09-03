@@ -3622,6 +3622,7 @@ input {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    gap: 0;
   }
   .icon .container .card {
     width: auto;
